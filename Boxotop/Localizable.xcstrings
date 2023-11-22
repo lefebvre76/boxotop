@@ -1,0 +1,35 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@" : {
+
+    },
+    "Add Item" : {
+
+    },
+    "Item at %@" : {
+
+    },
+    "list.find-your-movie" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Find your movie"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechercher un film"
+          }
+        }
+      }
+    },
+    "Select an item" : {
+
+    }
+  },
+  "version" : "1.0"
+}
