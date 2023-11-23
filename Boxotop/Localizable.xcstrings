@@ -27,6 +27,23 @@
         }
       }
     },
+    "load.load_more_data" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Load more data"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chargement des données"
+          }
+        }
+      }
+    },
     "Select an item" : {
 
     }

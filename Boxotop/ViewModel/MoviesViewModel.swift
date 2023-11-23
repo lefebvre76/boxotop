@@ -8,17 +8,42 @@
 import Foundation
 
 class MoviesViewModel: ObservableObject {
-    @Published public var result: ListMovies = ListMovies(search: [], totalResults: "0")
+    @Published public var movies: [Movie] = []
+    @Published public var total: Int?
     @Published public var searchText: String = ""
+    @Published public var showLoadMore = false
     
     private var currentPage = 1
 
-    func launchSearchMovies() async {
+    func loadData() {
+        currentPage = 1
+        Task {
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                self.showLoadMore = false
+                self.movies = []
+            }
+            await self.launchSearchMovies()
+        }
+    }
+    
+    func loadMoreData() {
+        currentPage += 1
+        Task {
+            await self.launchSearchMovies()
+        }
+    }
+    
+    private func launchSearchMovies() async {
         if let result = await MoviesApiService.index(query: self.searchText, page: currentPage) {
             switch(result) {
             case let .success(value):
-                await MainActor.run {
-                    self.result = value
+                DispatchQueue.main.async { [weak self] in
+                    guard let self else { return }
+                    self.showLoadMore = false
+                    self.movies.append(contentsOf: value.search)
+                    self.total = Int(value.totalResults)
+                    self.showLoadMore = self.movies.count < self.total ?? 0
                 }
             default: break
             }

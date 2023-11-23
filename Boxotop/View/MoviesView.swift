@@ -14,19 +14,22 @@ struct MoviesView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(moviesViewModel.result.search, id: \.id) { movie in
+                ForEach(moviesViewModel.movies, id: \.id) { movie in
                     Text("\(movie.title)")
                 }
                 .listRowSeparator(.hidden,
                                   edges: .all)
+                if moviesViewModel.showLoadMore {
+                    LoadView().onAppear {
+                        moviesViewModel.loadMoreData()
+                    }
+                }
             }
             .listStyle(.plain)
             .navigationTitle("list.find-your-movie")
             .searchable(text: $moviesViewModel.searchText)
             .onChange(of: moviesViewModel.searchText) {
-                Task {
-                    await moviesViewModel.launchSearchMovies()
-                }
+                moviesViewModel.loadData()
             }
         }
     }

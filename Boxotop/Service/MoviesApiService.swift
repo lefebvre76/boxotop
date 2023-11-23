@@ -13,7 +13,7 @@ class MoviesApiService {
         guard let query: String = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed),
               let apiKey = ProcessInfo.processInfo.environment["OMDB_API_KEY"] else { return nil }
         let dataTask = AF.request(
-            "https://omdbapi.com/?apikey=\(apiKey)&s=\(query)&type=\(type)")
+            "https://omdbapi.com/?apikey=\(apiKey)&s=\(query)&type=\(type)&page=\(page)")
             .serializingDecodable(ListMovies.self)
         return await dataTask.result
     }
