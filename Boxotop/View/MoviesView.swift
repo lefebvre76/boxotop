@@ -15,14 +15,15 @@ struct MoviesView: View {
         NavigationStack {
             List {
                 ForEach(moviesViewModel.movies, id: \.id) { movie in
-                    Text("\(movie.title)")
+                    MovieCellView(movie: movie)
                 }
                 .listRowSeparator(.hidden,
                                   edges: .all)
                 if moviesViewModel.showLoadMore {
                     LoadView().onAppear {
                         moviesViewModel.loadMoreData()
-                    }
+                    }.listRowSeparator(.hidden,
+                                                       edges: .all)
                 }
             }
             .listStyle(.plain)
