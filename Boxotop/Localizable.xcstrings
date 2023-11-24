@@ -49,8 +49,22 @@
         }
       }
     },
-    "Add Item" : {
-
+    "common.save" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sauvegarder"
+          }
+        }
+      }
     },
     "common.unknow" : {
       "extractionState" : "manual",
@@ -68,9 +82,6 @@
           }
         }
       }
-    },
-    "Item at %@" : {
-
     },
     "list.find-your-movie" : {
       "extractionState" : "manual",
@@ -123,6 +134,23 @@
         }
       }
     },
+    "movie.comment" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "commentaire"
+          }
+        }
+      }
+    },
     "movie.directed-by" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -136,6 +164,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Réalisé par %@"
+          }
+        }
+      }
+    },
+    "movie.my-review" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My review"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Mon avis"
           }
         }
       }
@@ -207,9 +252,6 @@
           }
         }
       }
-    },
-    "Select an item" : {
-
     }
   },
   "version" : "1.0"

@@ -44,6 +44,7 @@ struct DetailMovieView: View {
                     }
                     Spacer()
                 }.padding(.bottom)
+                FeedbackView(movieId: detailMovieViewModel.id)
                 CastingView(actors: detailMovieViewModel.movie?.casting() ?? [])
                 MovieItemSubtitle(text: "movie.plot".localized())
                 Text("\(detailMovieViewModel.movie?.plot ?? "")").padding(.horizontal)

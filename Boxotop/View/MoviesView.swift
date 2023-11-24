@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct MoviesView: View {
     @StateObject var moviesViewModel = MoviesViewModel()

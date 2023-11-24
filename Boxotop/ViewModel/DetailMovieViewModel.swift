@@ -13,7 +13,7 @@ class DetailMovieViewModel: ObservableObject {
     @Published public var title: String
     @Published public var load = true
     
-    private let id: String
+    public let id: String
     
     init(movie: Movie) {
         self.id = movie.id
