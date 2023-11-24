@@ -15,7 +15,13 @@ struct MoviesView: View {
         NavigationStack {
             List {
                 ForEach(moviesViewModel.movies, id: \.id) { movie in
-                    MovieCellView(movie: movie)
+                    NavigationLink(destination:
+                                    DetailMovieView(detailMovieViewModel: DetailMovieViewModel(movie: movie))) {
+                        MovieCellView(movie: movie)
+                            .listRowSeparator(.hidden, edges: .all)
+
+                    }
+                    
                 }
                 .listRowSeparator(.hidden,
                                   edges: .all)
